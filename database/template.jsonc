@@ -1,0 +1,107 @@
+{
+    // this is an example chip
+    "STM32L010F4":{
+        "brand": "st",
+
+        // pin count array is used to determine the ammount of variants
+        "pin count": [32, 20], // multiple variants of the same chip can be included
+        "package": ["LQFP32", "TSSOP20"], // package names shoul be ordered the same way as pin count
+
+        "size": ["7x7mm", "169mils"],
+
+        "voltage": [1.8, 3.6], // voltage is a range from min to max, this doesn't follow package count
+
+        "flash": "16k",
+        "ram": "2k",
+        "eeprom": "128",
+
+        "debug": ["swi"],
+
+        "ext clock count": 1,
+
+        "gpio count": 26,
+
+        // listed here are common peripherals, however you can add your own by following the style
+        "usb 1 count": 0, // items with 0 can be ommited, will simply not be searched
+        "usb 2 count": 0,
+        "usb 3 count": 0,
+        "usb c count": 0,
+
+        "uart count": 2, // this includes lpuart (lp variants don't need to be destinguished as you may not be able to see if it is an lp uart or not)
+        "spi count": 1,
+        "i2c count": 1,
+        "i2s count": 0,
+
+        "double spi count": 0, // names should be separated by spaces, so common words like spi can be searched
+        "quad spi count": 0,
+
+        "pwm count": 0, // this is all possible outputs that have pwm
+
+        // additional features should be lowercase and with common name
+        "features": [],
+
+        "pinout":[
+            { // lqfp variant
+                "1":  ["VDD" ],
+                "2":  ["PC14", "OSC32_IN"],
+                "3":  ["PC15", "OSC32_OUT"],
+                "4":  ["NRST"],
+                "5":  ["VDDA"],
+                "6":  ["PA0", "CK_IN"],
+                "7":  ["PA1" ],
+                "8":  ["PA2" ],
+
+                "9":  ["PA3" ],
+                "10": ["PA4" ],
+                "11": ["PA5" ],
+                "12": ["PA6" ],
+                "13": ["PA7" ],
+                "14": ["PB0" ],
+                "15": ["PB1" ],
+                "16": ["VSS" ],
+
+                "17": ["VDD" ],
+                "18": ["PA8" ],
+                "19": ["PA9" ],
+                "20": ["PA10"],
+                "21": ["PA11"],
+                "22": ["PA12"],
+                "23": ["PA13"],
+                "24": ["PA14"],
+                
+                "25": ["PA15"],
+                "26": ["PB3" ],
+                "27": ["PB4" ],
+                "28": ["PB5" ],
+                "29": ["PB6" ],
+                "30": ["PB7" ],
+                "31": ["PB9", "BOOT0"],
+                "32": ["VSS" ]
+            },
+            { // tssop variant
+                // names and order doesn't matter, but 1st should be the datasheet description like PA8
+                "1":  ["PB9", "BOOT0"],
+                "2":  ["PC14", "OSC32_IN"],
+                "3":  ["PC15", "OSC32_OUT"],
+                "4":  ["NRST"],
+                "5":  ["VDDA"],
+                "6":  ["PA0", "CK_IN"],
+                "7":  ["PA1" ],
+                "8":  ["PA2" ],
+                "9":  ["PA3" ],
+                "10": ["PA4" ],
+
+                "11": ["PA5" ],
+                "12": ["PA6" ],
+                "13": ["PA7" ],
+                "14": ["PB1" ],
+                "15": ["VSS" ],
+                "16": ["VDD" ],
+                "17": ["PA9" ],
+                "18": ["PA10"],
+                "19": ["PA13"],
+                "20": ["PA14"]                
+            }
+        ]
+    }
+}
